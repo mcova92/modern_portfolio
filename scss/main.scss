@@ -7,15 +7,16 @@
 
 body {
   @include background;
+  position: relative;
   background: $primary-color;
-  color: set-text-coolor($primary-color);
-  height: 100%;
+  color: set-text-color($primary-color);
+  height: fit-content;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
 }
 
-//headings
+// Headings
 h1,
 h2,
 h3 {
@@ -50,18 +51,18 @@ header {
 
 main {
   padding: 4rem;
-  //height: 100%;
-  min-height: calc(100vh-60px);
+  // height: 100%;
+  min-height: calc(100vh - 60px);
 
-  .icon {
+  .icons {
     margin-top: 1rem;
 
     a {
       padding: 0.4rem;
+      @include easeOut;
 
       &:hover {
         color: $secondary-color;
-        @include easeOut();
       }
     }
   }
@@ -69,10 +70,11 @@ main {
   &#home {
     overflow: hidden;
     h1 {
-      margin-top: 20vh;
+      margin-top: 1rem;
     }
   }
 }
+
 .about-info {
   display: grid;
   grid-gap: 30px;
@@ -96,9 +98,11 @@ main {
   .job-1 {
     grid-area: job1;
   }
+
   .job-2 {
     grid-area: job2;
   }
+
   .job-3 {
     grid-area: job3;
   }
@@ -110,7 +114,7 @@ main {
   }
 }
 
-//work/projects
+// Work/Projects
 .projects {
   display: grid;
   grid-gap: 0.7rem;
@@ -122,13 +126,13 @@ main {
 
     &:hover {
       opacity: 0.5;
-      bordeer-color: $secondary-color;
+      border-color: $secondary-color;
       @include easeOut;
     }
   }
 }
-//contact page
 
+// Contact Page
 .boxes {
   display: flex;
   flex-wrap: wrap;
@@ -137,6 +141,7 @@ main {
   margin-top: 1rem;
 
   div {
+    @include background;
     font-size: 2rem;
     border: 3px #fff solid;
     padding: 1.5rem 2.5rem;
@@ -154,8 +159,7 @@ main {
   }
 }
 
-//button styles
-
+// Button Styles
 .btn {
   display: block;
   padding: 0.5rem 1rem;
@@ -169,7 +173,7 @@ main {
 
 .btn-dark {
   @extend .btn;
-  background: darken($primary-color, 100);
+  background: darken($primary-color, 50);
   color: #fff;
 }
 
